@@ -1,0 +1,48 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 0;
+  background: var(--bg-primary);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.footer-brand svg { color: var(--green); }
+.green { color: var(--green); }
+
+.footer-copy {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.footer-copy svg { color: var(--green); }
+
+.footer-motto {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; text-align: center; }
+}
