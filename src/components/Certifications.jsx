@@ -3,74 +3,77 @@ import './Certifications.css'
 
 const CERTS = [
   {
-    name:    'Offensive Security Certified Professional',
-    short:   'OSCP',
-    issuer:  'Offensive Security',
-    date:    'Jan 2023',
-    status:  'active',
-    id:      'OS-101-XXXXX',
-    color:   'red',
-    desc:    'Hands-on 24-hour exam requiring exploitation of real machines in an isolated lab environment.',
+    name:   'Microsoft Certified: Security Operations Analyst Associate',
+    short:  'SC-200',
+    issuer: 'Microsoft',
+    date:   'Jun 2025',
+    expires:'Jun 2026',
+    status: 'active',
+    id:     '334DBDF88D8D112',
+    color:  'cyan',
+    desc:   'Validates skills in threat investigation, hunting, and response using Microsoft Sentinel, Defender XDR, and related security tools.',
   },
   {
-    name:    'Certified Ethical Hacker',
-    short:   'CEH',
-    issuer:  'EC-Council',
-    date:    'Jun 2022',
-    status:  'active',
-    id:      'ECC-XXXXXXX',
-    color:   'green',
-    desc:    'Comprehensive knowledge of ethical hacking phases, attack vectors, and countermeasures.',
+    name:   'ISO/IEC 27001:2022 Lead Auditor',
+    short:  'ISO 27001',
+    issuer: 'Mastermind Assurance',
+    date:   'Mar 2025',
+    expires:'Mar 2028',
+    status: 'active',
+    id:     '8wrmettx3y',
+    color:  'green',
+    desc:   'Certified to plan, conduct, and lead information security management system audits to the ISO/IEC 27001:2022 standard.',
   },
   {
-    name:    'CompTIA Security+',
-    short:   'Sec+',
-    issuer:  'CompTIA',
-    date:    'Mar 2021',
-    status:  'active',
-    id:      'COMP001021XXXXXX',
-    color:   'cyan',
-    desc:    'Core cybersecurity skills covering threat analysis, cryptography, identity management, and more.',
+    name:   'Foundation Level Threat Intelligence Analyst',
+    short:  'CTI Analyst',
+    issuer: 'arcX',
+    date:   'Feb 2025',
+    status: 'active',
+    id:     '92e7e92d2cdd9ccf67f4661794066a571ab9dfb7',
+    color:  'yellow',
+    desc:   'Foundation-level credential covering threat intelligence frameworks, collection, analysis, and reporting for SOC environments.',
   },
   {
-    name:    'Certified Cloud Security Professional',
-    short:   'CCSP',
-    issuer:  '(ISC)²',
-    date:    'Sep 2023',
-    status:  'active',
-    id:      'CCSP-XXXXXXX',
-    color:   'cyan',
-    desc:    'Advanced cloud security architecture, design, operations, and compliance expertise.',
+    name:   'Junior Cybersecurity Analyst Career Path',
+    short:  'Jr. SOC Analyst',
+    issuer: 'Cisco',
+    date:   '—',
+    status: 'active',
+    id:     '—',
+    color:  'cyan',
+    desc:   'Comprehensive SOC analyst pathway covering networking fundamentals, threat analysis, incident handling, and security monitoring.',
   },
   {
-    name:    'GIAC Penetration Tester',
-    short:   'GPEN',
-    issuer:  'GIAC / SANS',
-    date:    'Nov 2022',
-    status:  'active',
-    id:      'GPEN-XXXXXXX',
-    color:   'yellow',
-    desc:    'Comprehensive penetration testing methodology covering reconnaissance to post-exploitation.',
+    name:   'Cyber Threat Management',
+    short:  'CTM',
+    issuer: 'Cisco',
+    date:   '—',
+    status: 'active',
+    id:     '—',
+    color:  'red',
+    desc:   'Covers cyber threat management lifecycle including risk assessment, vulnerability identification, and threat mitigation strategies.',
   },
   {
-    name:    'Offensive Security Web Expert',
-    short:   'OSWE',
-    issuer:  'Offensive Security',
-    date:    'In Progress',
-    status:  'pending',
-    id:      '—',
-    color:   'red',
-    desc:    'Advanced web application whiteBox testing with a focus on source code review and exploitation.',
+    name:   'Endpoint Security',
+    short:  'Endpoint Sec',
+    issuer: 'Cisco',
+    date:   '—',
+    status: 'active',
+    id:     '—',
+    color:  'green',
+    desc:   'Endpoint protection principles including OS security hardening, malware defence, and endpoint detection and response (EDR) concepts.',
   },
-]
-
-const BADGES = [
-  { platform: 'HackTheBox',    rank: 'Pro Hacker',     color: 'green' },
-  { platform: 'TryHackMe',     rank: 'Top 1%',          color: 'cyan' },
-  { platform: 'Bug Crowd',     rank: 'Trusted Researcher', color: 'yellow' },
-  { platform: 'HackerOne',     rank: 'Reputation 1500+', color: 'red' },
-  { platform: 'VulnHub',       rank: '40+ Machines',    color: 'green' },
-  { platform: 'CTFtime',       rank: 'Rating 1800+',    color: 'cyan' },
+  {
+    name:   'Network Defense',
+    short:  'Net Defense',
+    issuer: 'Cisco',
+    date:   '—',
+    status: 'active',
+    id:     '—',
+    color:  'yellow',
+    desc:   'Network security monitoring, access control, firewall implementation, and intrusion detection techniques for defensive operations.',
+  },
 ]
 
 export default function Certifications() {
@@ -78,9 +81,9 @@ export default function Certifications() {
     <section id="certs" className="certs-section">
       <div className="section-container">
         <h2 className="section-title">
-          <span>// </span>certifications<span>_&_badges</span>
+          <span>// </span>certifications
         </h2>
-        <p className="section-subtitle">Professional credentials and platform achievements</p>
+        <p className="section-subtitle">Professional credentials and industry qualifications</p>
 
         <div className="certs-grid">
           {CERTS.map((c, i) => (
@@ -108,7 +111,8 @@ export default function Certifications() {
 
               <div className="cert-meta">
                 <span className="cert-issuer">{c.issuer}</span>
-                <span className="cert-date">{c.date}</span>
+                {c.date !== '—' && <span className="cert-date">Issued {c.date}</span>}
+                {c.expires && <span className="cert-date">Expires {c.expires}</span>}
               </div>
 
               {c.id !== '—' && (
@@ -120,20 +124,6 @@ export default function Certifications() {
           ))}
         </div>
 
-        {/* Platform badges */}
-        <div className="badges-section">
-          <h3 className="badges-heading">
-            <span className="prompt">$</span> ls platform-achievements/
-          </h3>
-          <div className="badges-grid">
-            {BADGES.map((b, i) => (
-              <div key={i} className={`platform-badge pb-${b.color}`}>
-                <span className="pb-platform">{b.platform}</span>
-                <span className="pb-rank">{b.rank}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )
