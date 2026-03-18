@@ -12,7 +12,7 @@ const PROJECTS = [
     category:'SIEM',
     icon:    <Shield size={22} />,
     color:   'cyan',
-    links: {},
+    links: { live: 'https://bit.ly/splunkproject' },
     highlights: ['Windows event log ingestion', 'Brute-force detection', 'SOC investigation workflow'],
   },
   {
@@ -22,7 +22,7 @@ const PROJECTS = [
     category:'Network',
     icon:    <Target size={22} />,
     color:   'green',
-    links: {},
+    links: { live: 'https://bit.ly/splunksuricata' },
     highlights: ['IDS alert ingestion into SIEM', 'Network intrusion analysis', 'Security monitoring architecture'],
   },
   {
@@ -42,7 +42,7 @@ const PROJECTS = [
     category:'Forensics',
     icon:    <Lock size={22} />,
     color:   'yellow',
-    links: {},
+    links: { live: 'https://bit.ly/429aPpJ' },
     highlights: ['Mobile data acquisition', 'Artifact examination', 'Evidence documentation'],
   },
   {
@@ -52,7 +52,7 @@ const PROJECTS = [
     category:'Vulnerability',
     icon:    <Trophy size={22} />,
     color:   'red',
-    links: {},
+    links: { live: 'https://bit.ly/4kdGsFc' },
     highlights: ['CVSS severity analysis', 'Critical vulnerability identification', 'Remediation planning'],
   },
 ]
